@@ -25,6 +25,11 @@ public class Bitmap3D extends Bitmap
 		yCam = t /10.0;;
 		zCam = Math.sin(t /30.0);
 		
+		rot = t/100.0;
+		
+		double rSin = Math.sin(rot);
+		double rCos = Math.cos(rot);
+		
 		for(int y = 0; y < height; y++)
 		{
 			double yd = (y - (height / 2)) / fov;
@@ -37,8 +42,8 @@ public class Bitmap3D extends Bitmap
 				double xd = (x - (width / 2)) / fov;
 				xd*=zd;
 				
-				int xPix = (int)(xd + xCam);
-				int yPix = (int)(zd + yCam);
+				int xPix = (int)(xd * rCos - zd * rSin + xCam);
+				int yPix = (int)(xd * rCos + zd * rCos + yCam);
 				
 				pixels[x + y * width] = ((yPix & 15) * 16) << 8 | ((xPix & 15) * 16);
 			}
