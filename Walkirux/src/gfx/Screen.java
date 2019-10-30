@@ -30,6 +30,7 @@ public class Screen extends Bitmap
 		
 		clear();
 		perspectiveVision.render();
+		perspectiveVision.renderFog();
 		render(perspectiveVision, 0, 0);
 //		render(test, (width - 50) / 2 + ox, (height -50) / 2 + oy);
 	}

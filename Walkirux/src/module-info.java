@@ -1,3 +1,3 @@
-module Walkirux {
+module test {
 	requires java.desktop;
 }
