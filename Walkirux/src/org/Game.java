@@ -1,5 +1,7 @@
 package org;
 
+// Imports are come from here
+
 import java.awt.Canvas;
 
 import javax.swing.JFrame;
@@ -12,11 +14,12 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 
+// The code is started from here
 
 public class Game extends Canvas implements Runnable
 {
 	private static final long serialVersionUID = 1L;
-	private static final int WIDTH = 640;
+	private static final int WIDTH = 1000;
 	public static final int HEIGHT = WIDTH * 3 / 4;
 	public static final int SCALE = 1;
 	public static final String TITLE ="Walkirux";
@@ -43,6 +46,8 @@ public class Game extends Canvas implements Runnable
 		
 		new Thread(this).start();
 	}
+	
+	// The section where the Frame Counter's code is start
 	
 	@Override
 	public void run()
@@ -87,6 +92,8 @@ public class Game extends Canvas implements Runnable
 		dispose();
 		
 	}
+	
+	// (Screen Renderer)
 	
 	public void render()
 	{
